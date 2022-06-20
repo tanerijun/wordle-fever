@@ -31,11 +31,6 @@ const getSolution = () => {
   }
   const solution = solutionArray[randomNumber];
 
-  console.log(
-    `getSolution is now returning => word: ${solution}, streak: ${
-      defaultArray.length - solutionArray.length
-    } quantity: ${defaultArray.length}`
-  );
   return {
     word: solution,
     streak: defaultArray.length - solutionArray.length,
