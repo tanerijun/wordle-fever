@@ -28,7 +28,7 @@ The words list are inside the data folder inside src, you can freely modify it, 
 
 ## More info
 
-The game is written in TypeScript with React/NextJS and Chakra UI.
+The game is written in TypeScript with React and Chakra UI.
 
 I made this game for fun and learning purpose. (And to satisfy my thirst for nightmare level Wordle :p)
 
