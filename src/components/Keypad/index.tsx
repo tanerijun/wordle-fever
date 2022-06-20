@@ -53,10 +53,10 @@ const keypadLayout = [
 
 const Keypad = ({ keysColor, handleKeyup }: KeypadProps) => {
   return (
-    <VStack>
+    <VStack spacing={1}>
       {keypadLayout.map((row, index) => {
         return (
-          <HStack key={index}>
+          <HStack key={index} spacing={1}>
             {row.map((letter) => {
               return (
                 <KeypadKey

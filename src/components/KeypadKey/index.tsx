@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button, useColorMode } from '@chakra-ui/react';
+import { AiOutlineEnter, AiOutlineRollback } from 'react-icons/ai';
 
 interface KeypadKeyProps {
   keysColor: {
@@ -47,10 +48,17 @@ const KeypadKey = ({ keysColor, letter, handleKeyup }: KeypadKeyProps) => {
     <Button
       key={letter.key}
       colorScheme={keypadKeyColor}
-      size={['xs', 'sm', 'md']}
+      size={['sm', 'md', 'md']}
       onClick={() => handleKeyup(letter)}
     >
-      {letter.key.toUpperCase()}
+      {/* {letter.key.toUpperCase()} */}
+      {letter.key === 'Enter' ? (
+        <AiOutlineEnter />
+      ) : letter.key === 'Backspace' ? (
+        <AiOutlineRollback />
+      ) : (
+        letter.key.toUpperCase()
+      )}
     </Button>
   );
 };
