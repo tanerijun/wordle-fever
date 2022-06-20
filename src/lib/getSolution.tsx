@@ -1,4 +1,4 @@
-import defaultArray from '../data/data.js';
+import defaultArray from '../data';
 // smaller array for debugging
 // var defaultArray = ['pouch', 'punch', 'lucky', 'truck', 'snail'];
 
