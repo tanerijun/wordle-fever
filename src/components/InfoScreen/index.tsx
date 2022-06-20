@@ -35,7 +35,12 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
 
   return (
     <>
-      <Button ref={btnRef} onClick={onOpen} size={['xs', 'sm', 'md']}>
+      <Button
+        ref={btnRef}
+        onClick={onOpen}
+        size={['xs', 'sm', 'md']}
+        variant="ghost"
+      >
         <FaLightbulb />
       </Button>
 
@@ -52,24 +57,24 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
           <ModalCloseButton />
           <ModalBody>
             <VStack alignItems="flex-start">
-              <Text>
+              <Text fontSize="sm">
                 <b>Wordle Fever</b> is Wordle for the true hardcore. You beat
                 the game by guessing all the correct Wordles consecutively.
               </Text>
-              <Text>
+              <Text fontSize="sm">
                 In other words, you win by accumulating {quantity} win streaks.
               </Text>
-              <Text>
+              <Text fontSize="sm">
                 You can rest assured that the same Wordle won&apos;t show up
                 twice. The game will get easier the longer you play as the
                 solution pool get smaller and smaller.
               </Text>
-              <Text>
+              <Text fontSize="sm">
                 You have 6 tries to guess each Wordle. Type the Wordle with your
                 Keyboard or Keypad, and press ENTER to submit.
               </Text>
               <Divider />
-              <Text>Examples</Text>
+              <Text fontSize="sm">Examples</Text>
               <HStack>
                 <Tile letter="L" color="green" />
                 <Tile letter="U" color="transparent" />
@@ -77,7 +82,7 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
                 <Tile letter="K" color="transparent" />
                 <Tile letter="Y" color="transparent" />
               </HStack>
-              <Text>
+              <Text fontSize="sm">
                 The letter <b>L</b> is in the Wordle and in the correct spot.
               </Text>
               <HStack>
@@ -87,7 +92,7 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
                 <Tile letter="I" color="transparent" />
                 <Tile letter="L" color="yellow" />
               </HStack>
-              <Text>
+              <Text fontSize="sm">
                 The letter <b>L</b> is in the Wordle but in the wrong spot.
               </Text>
               <HStack>
@@ -97,7 +102,7 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
                 <Tile letter="A" color="transparent" />
                 <Tile letter="E" color="transparent" />
               </HStack>
-              <Text>
+              <Text fontSize="sm">
                 The letter <b>L</b> is not in the Wordle.
               </Text>
             </VStack>

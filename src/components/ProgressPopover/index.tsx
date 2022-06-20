@@ -21,7 +21,9 @@ const ProgressPopover = ({ streak, quantity }: ProgressPopoverProps) => {
   return (
     <Popover>
       <PopoverTrigger>
-        <Button size={['xs', 'sm', 'md']}>{streak}</Button>
+        <Button size={['xs', 'sm', 'md']} variant="ghost">
+          <Text fontSize="xl">{streak}</Text>
+        </Button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

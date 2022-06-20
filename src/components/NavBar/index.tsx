@@ -17,9 +17,13 @@ const NavBar = ({ streak, quantity }: NavBarProps) => {
         Wordle Fever
       </Heading>
       <HStack>
-        <InfoScreen quantity={quantity} />
         <ProgressPopver streak={streak} quantity={quantity} />
-        <Button onClick={toggleColorMode} size={['xs', 'sm', 'md']}>
+        <InfoScreen quantity={quantity} />
+        <Button
+          onClick={toggleColorMode}
+          size={['xs', 'sm', 'md']}
+          variant="ghost"
+        >
           {colorMode === 'dark' ? <FaSun /> : <FaMoon />}
         </Button>
         <Button
@@ -27,6 +31,7 @@ const NavBar = ({ streak, quantity }: NavBarProps) => {
           href="https://github.com/tanerijun/wordle-fever"
           target="_blank"
           size={['xs', 'sm', 'md']}
+          variant="ghost"
         >
           <FaGithub />
         </Button>
