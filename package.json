@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.0.0",
     "@fontsource/clear-sans": "^4.5.3",
     "@fontsource/fascinate-inline": "^4.5.8",
+    "@fvilers/disable-react-devtools": "^1.3.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.0",
