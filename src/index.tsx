@@ -6,22 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
-// This will remove access from ReactDevTools in production
-if (process.env.NODE_ENV === 'production') {
-  disableReactDevTools();
-}
+// This will remove access from ReactDevTools
+disableReactDevTools();
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(container);
 
 root.render(
-  // <React.StrictMode>
-  <>
+  <React.StrictMode>
     <ColorModeScript />
     <App />
-  </>
-  // </React.StrictMode>
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
