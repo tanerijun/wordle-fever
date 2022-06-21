@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './service-worker';
+import * as serviceWorker from './serviceWorkerRegistration';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 // This will remove access from ReactDevTools
