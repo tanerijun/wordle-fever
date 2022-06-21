@@ -108,10 +108,19 @@ const InfoScreen = ({ quantity }: InfoScreenProps) => {
             </VStack>
           </ModalBody>
 
-          <ModalFooter justifyContent="center">
+          <ModalFooter
+            flexDirection="column"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+          >
+            <Text fontSize="xs">Tips:</Text>
             <Text fontSize="xs">
-              Tips: You can close the game and come back anytime. Your progress
-              is autosaved.
+              1. You don't have to enter a valid word, hope this open up more
+              room for strategy.
+            </Text>
+            <Text fontSize="xs">
+              2. You can close the game and come back anytime. Your progress is
+              autosaved.
             </Text>
           </ModalFooter>
         </ModalContent>
