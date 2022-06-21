@@ -9,6 +9,7 @@ import {
   ModalBody,
   useDisclosure,
   Text,
+  Link,
 } from '@chakra-ui/react';
 
 interface WinnerScreenProps {
@@ -39,7 +40,16 @@ const WinnerScreen = ({ quantity, setStreak, setRound }: WinnerScreenProps) => {
       <ModalContent>
         <ModalHeader textAlign="center">Game Over</ModalHeader>
         <ModalBody>
-          <Text>Congratulations! You beat the game! For real?</Text>
+          <Text>Congratulations! You beat the game!</Text>
+          <Text>
+            For real?{' '}
+            <Link
+              href="mailto:tanerivince@gmail.com?subject=I Beat Wordle Fever"
+              isExternal
+            >
+              Do you mind telling me how you did it?
+            </Link>
+          </Text>
         </ModalBody>
         <ModalFooter display="flex" justifyContent="center">
           <Button

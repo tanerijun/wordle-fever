@@ -32,7 +32,9 @@ The game is written in TypeScript with React and Chakra UI.
 
 I made this game for fun and learning purpose. (And to satisfy my thirst for nightmare level Wordle :p)
 
-You can play it [here](wordle-fever.netlify.app)
+You can play it [here](https://wordle-fever.netlify.app)
+
+Tips: You don't have to enter a valid word, hope this open up more room for strategy.
 
 ## License
 
