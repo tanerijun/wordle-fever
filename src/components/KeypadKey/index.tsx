@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Button, useColorMode } from '@chakra-ui/react';
-import { AiOutlineEnter, AiOutlineRollback } from 'react-icons/ai';
+import { useState, useEffect } from "react";
+import { Button, useColorMode } from "@chakra-ui/react";
+import { AiOutlineEnter, AiOutlineRollback } from "react-icons/ai";
 
 interface KeypadKeyProps {
   keysColor: {
@@ -20,23 +20,23 @@ interface KeypadKeyProps {
 
 const KeypadKey = ({ keysColor, letter, handleKeyup }: KeypadKeyProps) => {
   const { colorMode } = useColorMode();
-  const [keypadKeyColor, setKeypadKeyColor] = useState('');
+  const [keypadKeyColor, setKeypadKeyColor] = useState("");
 
   useEffect(() => {
-    colorMode === 'dark'
-      ? setKeypadKeyColor('whiteAlpha')
-      : setKeypadKeyColor('blackAlpha');
+    colorMode === "dark" ? setKeypadKeyColor("whiteAlpha") : setKeypadKeyColor("gray");
   }, [colorMode]);
 
   useEffect(() => {
     if (keysColor[letter.key]) {
       const setColor = setTimeout(() => {
-        if (keysColor[letter.key] === 'green') {
-          setKeypadKeyColor('green');
-        } else if (keysColor[letter.key] === 'yellow') {
-          setKeypadKeyColor('yellow');
-        } else if (keysColor[letter.key] === 'gray') {
-          setKeypadKeyColor('gray');
+        if (keysColor[letter.key] === "green") {
+          setKeypadKeyColor("green");
+        } else if (keysColor[letter.key] === "yellow") {
+          setKeypadKeyColor("yellow");
+        } else if (keysColor[letter.key] === "gray" && colorMode === "light") {
+          setKeypadKeyColor("blackAlpha");
+        } else if (keysColor[letter.key] === "gray" && colorMode === "dark") {
+          setKeypadKeyColor("gray");
         }
       }, 1300);
 
@@ -48,13 +48,13 @@ const KeypadKey = ({ keysColor, letter, handleKeyup }: KeypadKeyProps) => {
     <Button
       key={letter.key}
       colorScheme={keypadKeyColor}
-      size={['sm', 'md', 'md']}
+      color={keypadKeyColor === "blackAlpha" && colorMode === "light" ? "black" : undefined}
+      size={["sm", "md", "md"]}
       onClick={() => handleKeyup(letter)}
     >
-      {/* {letter.key.toUpperCase()} */}
-      {letter.key === 'Enter' ? (
+      {letter.key === "Enter" ? (
         <AiOutlineEnter />
-      ) : letter.key === 'Backspace' ? (
+      ) : letter.key === "Backspace" ? (
         <AiOutlineRollback />
       ) : (
         letter.key.toUpperCase()

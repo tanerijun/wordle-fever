@@ -21,7 +21,7 @@ To install and run locally:
 Clone the repo, then:
 
 ```bash
-yarn install && yarn dev
+yarn install && yarn start
 ```
 
 The words list are inside the data folder inside src, you can freely modify it, it's just one gigantic array.
