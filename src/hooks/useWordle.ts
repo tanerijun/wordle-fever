@@ -53,20 +53,38 @@ const useWordle = (solution: string) => {
   const processGuess = () => {
     // turn the solution string into array
     let solutionArray = [...solution];
-    // format each letter, and set default color to gray
-    let formattedGuess: Guess[] = [...currentGuess].map((letter, i) => {
-      // color check
-      let color = 'gray'; // default color
+    let formattedGuess: Guess[] = [...currentGuess].map(() => ({
+      key: '',
+      color: 'gray'
+    }));
+    // Find green letters
+    [...currentGuess].forEach((letter, i) => {
       if (letter.toLowerCase() === solutionArray[i]) {
-        color = 'green'; // letter in correct spot
-      } else if (solutionArray.includes(letter.toLowerCase())) {
-        color = 'yellow'; // letter is part of the word, but not in the correct spot
+        formattedGuess[i] = {
+          key: letter.toLowerCase(),
+          color: 'green'
+        };
+        solutionArray[i] = '_'; // Mark this position as used
       }
-
-      return {
-        key: letter.toLowerCase(),
-        color,
-      };
+    });
+    [...currentGuess].forEach((letter, i) => {
+      if (formattedGuess[i].color !== 'green') { // Skip if already marked green
+        const letterLower = letter.toLowerCase();
+        const solutionIdx = solutionArray.indexOf(letterLower);
+        
+        if (solutionIdx !== -1) {
+          formattedGuess[i] = {
+            key: letterLower,
+            color: 'yellow'
+          };
+          solutionArray[solutionIdx] = '_'; // Mark this letter as used
+        } else {
+          formattedGuess[i] = {
+            key: letterLower,
+            color: 'gray'
+          };
+        }
+      }
     });
 
     // add guess to history to prevent duplicate input
