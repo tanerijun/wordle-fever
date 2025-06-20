@@ -39,7 +39,7 @@ const keypadLayout = [
     { key: 'l' },
   ],
   [
-    { key: 'Enter' },
+    { key: 'Backspace' },
     { key: 'z' },
     { key: 'x' },
     { key: 'c' },
@@ -47,7 +47,7 @@ const keypadLayout = [
     { key: 'b' },
     { key: 'n' },
     { key: 'm' },
-    { key: 'Backspace' },
+    { key: 'Enter' },
   ],
 ];
 
